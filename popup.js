@@ -56,9 +56,8 @@ document.getElementById('addInfo').addEventListener('click', async (e) => {
     title: document.getElementById('title').value,
     icon: document.getElementById('icon').value,
     url: document.getElementById('url').value,
-    label: ['123', '123'],
+    label: Array.from(document.getElementById('classify').selectedOptions).map(option => option.value),
     desc: document.getElementById('description').value,
-    classifyId: '111',
   };
   show(['loading'])
   const res = await fetch('http://localhost:3000/api/website', {
