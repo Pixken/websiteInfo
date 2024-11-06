@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #getInfoBtn, #addInfo { 
+      width: 90px;
+      height: 30px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    #iconImg {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+    .hide {
+      display: none;
+    }
+    #loading, #success, #error, #isAdded {
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="form" class="hide">
+    <label for="url">URL:</label>
+    <input type="text" id="url" name="url">
+    <br>
+    <label for="title">title:</label>
+    <input type="text" id="title" name="title">
+    <br>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description">
+    <br>
+    <label for="icon">icon:</label>
+    <img id="iconImg" src="" alt="">
+    <input type="text" id="icon" name="icon">
+    <br>
+    <button id="addInfo">添加网站</button>
+  </form>
+  <div id="loading" class="hide">加载中...</div>
+  <p id="isAdded" class="hide">该网站已添加</p>
+  <button id="getInfoBtn">获取网站信息</button>
+  <p id="success">添加成功</p>
+  <button id="close">关闭</button>
+  <p id="error">添加失败</p>
+  <script src="popup.js"></script>
+</body>
+
+</html>

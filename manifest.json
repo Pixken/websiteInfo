@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Source Toolkit",
+  "description": "获取网站信息",
+  "version": "1.0",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "hello_extensions.png"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}
