@@ -21,12 +21,27 @@ const findInfo = () => {
 }
 findInfo()
 
+// 获取分类
+const getClassify = async () => {
+  const res = await fetch('http://localhost:3000/api/websiteClassify')
+  const data = await res.json()
+  return data
+}
+
+
 // 获取信息
 document.getElementById('getInfoBtn').addEventListener('click', () => {
   show(['form'])
   chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
     const tab = tabs[0];
-    console.log(tab.url)
+    const labels = await getClassify()
+    console.log(labels)
+    labels.forEach(item => {
+      const option = document.createElement('option')
+      option.value = item.title
+      option.text = item.title
+      document.getElementById('classify').appendChild(option)
+    })
     document.getElementById('url').value = tab.url;
     document.getElementById('icon').value = tab.favIconUrl || 'https://via.placeholder.com/16'; // 如果没有找到图标，使用占位图
     document.getElementById('iconImg').setAttribute('src', tab.favIconUrl || 'https://via.placeholder.com/16');
