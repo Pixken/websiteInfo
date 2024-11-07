@@ -4,12 +4,20 @@
   "description": "获取网站信息",
   "version": "1.0",
   "action": {
-    "default_popup": "hello.html",
-    "default_icon": "hello_extensions.png"
+    "default_popup": "popup.html",
+    "default_icon": "popup.png"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs",
+    "webNavigation"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "chrome_url_overrides": {
+    "newtab": "new-tab.html"
+  },
   "host_permissions": [
     "http://*/*",
     "https://*/*"
