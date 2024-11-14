@@ -47,6 +47,13 @@ document.getElementById('getInfoBtn').addEventListener('click', () => {
     document.getElementById('iconImg').setAttribute('src', tab.favIconUrl || 'https://via.placeholder.com/16');
     document.getElementById('title').value = tab.title;
   });
+  chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    console.log(request)
+
+    if (request.description) {
+      document.getElementById('description').value = request.description;
+    }
+  });
 });
 
 // 添加
