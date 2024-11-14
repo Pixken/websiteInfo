@@ -4,7 +4,7 @@ const findInfo = () => {
     const tab = tabs[0];
     console.log(tab.url)
     show(['loading'])
-    const res = await fetch(`http://localhost:3000/api/findWebsite`, {
+    const res = await fetch(`http://117.72.49.27:3280/api/findWebsite`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ findInfo()
 
 // 获取分类
 const getClassify = async () => {
-  const res = await fetch('http://localhost:3000/api/websiteClassify')
+  const res = await fetch('http://117.72.49.27:3280/api/websiteClassify')
   const data = await res.json()
   return data
 }
@@ -67,7 +67,7 @@ document.getElementById('addInfo').addEventListener('click', async (e) => {
     desc: document.getElementById('description').value,
   };
   show(['loading'])
-  const res = await fetch('http://localhost:3000/api/website', {
+  const res = await fetch('http://117.72.49.27:3280/api/website', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
